@@ -1,5 +1,6 @@
 pipeline{
     agent any
+    
     environment{
       PATH = "/opt/maven/bin:$PATH"
     }
@@ -8,10 +9,11 @@ pipeline{
             steps{
                 git 'https://github.com/mounikayemula/Jenkins-example.git/'
             }
+         }
         stage("Maven Build"){
             steps{
                 sh "mvn clean package"
             }
          }
-        
+     }  
 }
